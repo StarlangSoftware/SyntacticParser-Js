@@ -25,7 +25,7 @@
             this.rulesRightSorted = [];
             this.ruleLeftComparator = (ruleA, ruleB) => (ruleA.getLeftHandSide().getName().localeCompare(ruleB.getLeftHandSide().getName()));
             this.ruleRightComparator = (ruleA, ruleB) => (this.ruleRightCompare(ruleA, ruleB));
-            this.ruleComparator = (ruleA, ruleB) => (ruleA.getLeftHandSide() == ruleB.getLeftHandSide() ? this.ruleLeftComparator(ruleA, ruleB) : this.ruleRightComparator(ruleA, ruleB));
+            this.ruleComparator = (ruleA, ruleB) => (ruleA.getLeftHandSide().getName() != ruleB.getLeftHandSide().getName() ? this.ruleLeftComparator(ruleA, ruleB) : this.ruleRightComparator(ruleA, ruleB));
             this.dictionary = new CounterHashMap_1.CounterHashMap();
             this.rules = [];
             this.rulesRightSorted = [];

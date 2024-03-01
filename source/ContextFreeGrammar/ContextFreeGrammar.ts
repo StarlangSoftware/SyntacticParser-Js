@@ -89,7 +89,7 @@ export class ContextFreeGrammar {
 
     ruleLeftComparator = (ruleA: Rule, ruleB: Rule) => (ruleA.getLeftHandSide().getName().localeCompare(ruleB.getLeftHandSide().getName()))
     ruleRightComparator = (ruleA: Rule, ruleB: Rule) => (this.ruleRightCompare(ruleA, ruleB))
-    ruleComparator = (ruleA: Rule, ruleB: Rule) => (ruleA.getLeftHandSide() == ruleB.getLeftHandSide() ? this.ruleLeftComparator(ruleA, ruleB) : this.ruleRightComparator(ruleA, ruleB))
+    ruleComparator = (ruleA: Rule, ruleB: Rule) => (ruleA.getLeftHandSide().getName() != ruleB.getLeftHandSide().getName() ? this.ruleLeftComparator(ruleA, ruleB) : this.ruleRightComparator(ruleA, ruleB))
     ruleRightCompare(ruleA: Rule, ruleB: Rule): number{
         let i = 0
         while (i < ruleA.getRightHandSideSize() && i < ruleB.getRightHandSideSize()){
