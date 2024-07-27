@@ -19,6 +19,13 @@
     const ParseNode_1 = require("nlptoolkit-parsetree/dist/ParseNode");
     const ProbabilisticParseNode_1 = require("../ProbabilisticContextFreeGrammar/ProbabilisticParseNode");
     class ProbabilisticCYKParser extends ProbabilisticParser_1.ProbabilisticParser {
+        /**
+         * Constructs an array of most probable parse trees for a given sentence according to the given grammar. CYK parser
+         * is based on a dynamic programming algorithm.
+         * @param pcfg Probabilistic context free grammar used in parsing.
+         * @param sentence Sentence to be parsed.
+         * @return Array list of most probable parse trees for the given sentence.
+         */
         parse(pcfg, sentence) {
             let parseTrees = [];
             let backUp = new Sentence_1.Sentence();

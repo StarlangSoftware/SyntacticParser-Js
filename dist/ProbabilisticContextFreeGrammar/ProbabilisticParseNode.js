@@ -12,6 +12,13 @@
     exports.ProbabilisticParseNode = void 0;
     const ParseNode_1 = require("nlptoolkit-parsetree/dist/ParseNode");
     class ProbabilisticParseNode extends ParseNode_1.ParseNode {
+        /**
+         * Constructor for the ProbabilisticParseNode class. Extends the parse node with a probability.
+         * @param param1 Left child of this node.
+         * @param param2 Right child of this node.
+         * @param param3 Data for this node.
+         * @param param4 Logarithm of the probability of the node.
+         */
         constructor(param1, param2, param3, param4) {
             if (param4 != undefined) {
                 super(param1, param2, param3);
@@ -30,6 +37,10 @@
                 }
             }
         }
+        /**
+         * Accessor for the logProbability attribute.
+         * @return logProbability attribute.
+         */
         getLogProbability() {
             return this.logProbability;
         }

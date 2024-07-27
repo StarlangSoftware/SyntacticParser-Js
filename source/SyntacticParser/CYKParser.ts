@@ -8,6 +8,14 @@ import {ParseNode} from "nlptoolkit-parsetree/dist/ParseNode";
 import {Symbol} from "nlptoolkit-parsetree/dist/Symbol";
 
 export class CYKParser extends SyntacticParser {
+
+    /**
+     * Constructs an array of possible parse trees for a given sentence according to the given grammar. CYK parser
+     * is based on a dynamic programming algorithm.
+     * @param cfg Context free grammar used in parsing.
+     * @param sentence Sentence to be parsed.
+     * @return Array list of possible parse trees for the given sentence.
+     */
     parse(cfg: ContextFreeGrammar, sentence: Sentence): Array<ParseTree> {
         let parseTrees : Array<ParseTree> = []
         let backUp = new Sentence()

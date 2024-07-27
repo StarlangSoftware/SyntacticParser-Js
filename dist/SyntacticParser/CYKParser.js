@@ -18,6 +18,13 @@
     const ParseNode_1 = require("nlptoolkit-parsetree/dist/ParseNode");
     const Symbol_1 = require("nlptoolkit-parsetree/dist/Symbol");
     class CYKParser extends SyntacticParser_1.SyntacticParser {
+        /**
+         * Constructs an array of possible parse trees for a given sentence according to the given grammar. CYK parser
+         * is based on a dynamic programming algorithm.
+         * @param cfg Context free grammar used in parsing.
+         * @param sentence Sentence to be parsed.
+         * @return Array list of possible parse trees for the given sentence.
+         */
         parse(cfg, sentence) {
             let parseTrees = [];
             let backUp = new Sentence_1.Sentence();
