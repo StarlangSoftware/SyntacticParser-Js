@@ -1,0 +1,5 @@
+node_modules/
+.vscode/
+/.idea/modules.xml
+/package-lock.json
+/.idea/inspectionProfiles/Project_Default.xml
